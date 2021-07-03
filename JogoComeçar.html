@@ -1,0 +1,107 @@
+<html>
+<head>
+</head>
+<body>
+
+	
+	<script>
+		
+		//Quadrado 
+		document.body.innerHTML = "<canvas id=c1 width=1500 height=700->";
+		var meucanvas = document.getElementById("c1");
+		ctx = meucanvas.getContext('2d');
+		ctx.fillStyle = 'green'
+		ctx.fillRect(0, 0, 50, 50);
+		function move1(){ console.log("ola mundo");}
+    		function move2(e) { console.log(e.code);}
+		document.addEventListener('keydown',move2);
+		
+
+		function move3(e) {
+
+ctx.fillStyle = "white";
+ctx.fillRect(x, y, 50, 50);
+ctx.fillRect(xBot, yBot, 50, 50);	
+ctx.fillRect(xBot2, yBot2, 75, 75);
+
+//Movimentação
+if(e.code == "ArrowRight"){
+x = x+3
+passos++;
+console.log(passos)
+}
+if(e.code == "ArrowLeft"){
+x = x-3
+passos++;
+console.log(passos)
+}
+if(e.code == "ArrowDown"){
+y = y+3
+passos++;
+console.log(passos)
+}
+if(e.code == "ArrowUp"){
+y = y-3
+passos++;
+console.log(passos)
+}
+if(xBot > x){
+	xBot--;
+	xBot--;
+}else{
+	xBot++;
+	xBot++;
+
+}
+
+if(yBot < y){
+	yBot++;
+	yBot++;
+}else{
+	yBot--;
+}
+
+
+
+
+
+if(passos > 500){
+if(yBot2 < y){
+	yBot2++;
+	yBot2++;
+}
+if(yBot2 > y){
+	yBot2--;
+	yBot2--;
+}
+if(xBot2 < x){
+	xBot2++;
+	xBot2++;
+
+}
+if(xBot2 > x){
+	xBot2--;
+	xBot2--;
+}
+}
+
+ctx.fillStyle = "green";
+ctx.fillRect(x,y,50,50)
+
+ctx.fillStyle = "black";
+ctx.fillRect(xBot, yBot, 50, 50);				  } 
+
+document.addEventListener('keydown', move3);
+x=0
+y=0
+
+xBot=1450
+yBot=650
+
+xBot2=500
+yBot2=600
+passos = 0
+
+	</script>
+</body>
+</html>
